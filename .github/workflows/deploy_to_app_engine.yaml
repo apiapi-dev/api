@@ -19,7 +19,7 @@ jobs:
       - name: Use gcloud CLI
         run: gcloud info
       - name: Install Prisma
-        run: npm install @prisma/cli -D
+        run: npm install @prisma/cli -g
       - name: Generate Prisma Client
         run: prisma generate
         env:
