@@ -13,8 +13,6 @@ app.get('/status', (req, res) => res.send('Operational: ' + Date()))
 
 app.get('/init', (req, res) => {
     try {
-
-
         const prisma = new PrismaClient()
 
         prisma.api.create({

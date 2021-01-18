@@ -1,6 +1,6 @@
 runtime: nodejs14
 
 env_variables:
-  DATABASE_URL: "postgresql://postgres:gGmemvqn4ufqs33G@127.0.0.1:5432/api?host=/cloudsql/apiapi-302104:us-west2:apiapi-api-database"
+  DATABASE_URL: "postgresql://postgres:gGmemvqn4ufqs33G@localhost/api?host=/cloudsql/apiapi-302104:us-west2:apiapi-api-database"
   PORT: 8080
 
