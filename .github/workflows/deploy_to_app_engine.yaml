@@ -18,6 +18,12 @@ jobs:
           export_default_credentials: true
       - name: Use gcloud CLI
         run: gcloud info
+      - name: Install Prisma
+        run: npm install @prisma/cli -D
+      - name: Generate Prisma Client
+        run: npx prisma init
+        env:
+          DATABASE_URL: "postgresql://postgres:gGmemvqn4ufqs33G@localhost/api?host=/cloudsql/apiapi-api-database"
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
