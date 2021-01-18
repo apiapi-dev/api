@@ -10,7 +10,7 @@ const app = express()
 
 app.get('/', (req, res) => res.send('You just made an API call to the API API 🤯'))
 app.get('/status', (req, res) => res.send('Operational: ' + Date()))
-
+app.get('/db', (req,res)=>res.send(process.env.DATABASE_URL))
 app.get('/init', (req, res) => {
     try {
         const prisma = new PrismaClient()
