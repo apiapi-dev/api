@@ -25,8 +25,8 @@ jobs:
         run: npm install @prisma/cli -g
       - name: Generate Prisma Client
         run: prisma generate
-        env:
-          DATABASE_URL: "postgresql://postgres:gGmemvqn4ufqs33G@localhost/api?host=/cloudsql/apiapi-api-database"
+        # env:
+        #   DATABASE_URL: "postgresql://postgres:gGmemvqn4ufqs33G@localhost/api?host=/cloudsql/apiapi-api-database"
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
