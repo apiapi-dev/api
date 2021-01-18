@@ -21,7 +21,7 @@ app.post('/api', (req, res) => {
     } else {
         fetch('https://api.github.com/user', {
             headers: {
-                Authorization: 'token b047f4352fa4a412e6bd7d27a38e9824db7bd867',
+                Authorization: req.headers.authorization,
                 Accept: 'application/vnd.github.v3+json'
             }
         }).then(async (dbRes): Promise<void> => {
