@@ -1,5 +1,9 @@
 # APIAPI API
 
+## Install
+
+- `yarn`
+
 ## Running
 
 How to run:
