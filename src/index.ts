@@ -11,10 +11,10 @@ const app = express()
 app.get('/', (req, res) => res.send('You just made an API call to the API API 🤯'))
 app.get('/status', (req, res) => res.send('Operational: ' + Date()))
 app.get('/db', (req,res)=>res.send(process.env.DATABASE_URL))
-app.get('/init', (req, res) => {
+app.get('/init', async (req, res) => {
     try {
         const prisma = new PrismaClient()
-
+        await prisma.$connect()
         prisma.api.create({
             data: {
                 name: 'Space X API',
