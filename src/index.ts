@@ -20,9 +20,9 @@ app.get('/init', (req, res) => {
             documentation: 'https://docs.spacexdata.com/',
             creator_id: 'theswerd'
         }
-    }).catch((error)=>{
+    }).catch((error: any)=>{
         res.status(400).send(error)
-    }).then((dbRes)=>{
+    }).then((dbRes: any)=>{
         res.send(dbRes)
     })
 })
