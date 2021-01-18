@@ -25,10 +25,10 @@ app.get('/init', (req, res) => {
         }).catch((error: any) => {
             res.status(400).send(error)
         }).then((dbRes: any) => {
-            res.send(dbRes)
+            res.status(200).send(dbRes)
         })
     } catch (error) {
-        res.send(error)
+        res.status(401).send(error)
     }
 })
 app.listen(PORT, () => console.log('Started on port', PORT))
