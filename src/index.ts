@@ -12,20 +12,25 @@ app.get('/', (req, res) => res.send('You just made an API call to the API API ðŸ
 app.get('/status', (req, res) => res.send('Operational: ' + Date()))
 
 app.get('/init', (req, res) => {
-    const prisma = new PrismaClient()
+    try {
 
-    prisma.api.create({
-        data: {
-            name: 'Space X API',
-            description: 'The Space X API',
-            documentation: 'https://docs.spacexdata.com/',
-            creator_id: 'theswerd'
-        }
-    }).catch((error: any) => {
-        res.status(400).send(error)
-    }).then((dbRes: any) => {
-        res.status(200).send(dbRes)
-    })
 
+        const prisma = new PrismaClient()
+
+        prisma.api.create({
+            data: {
+                name: 'Space X API',
+                description: 'The Space X API',
+                documentation: 'https://docs.spacexdata.com/',
+                creator_id: 'theswerd'
+            }
+        }).catch((error: any) => {
+            res.status(400).send(error)
+        }).then((dbRes: any) => {
+            res.status(200).send(dbRes)
+        })
+    } catch (error) {
+        res.json({ err: error })
+    }
 })
 app.listen(PORT, () => console.log('Started on port', PORT))
