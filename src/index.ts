@@ -7,13 +7,13 @@ dotenv.config()
 const PORT = process.env.PORT
 
 const app = express()
+const prisma = new PrismaClient()
 
 app.get('/', (req, res) => res.send('You just made an API call to the API API 🤯'))
 app.get('/status', (req, res) => res.send('Operational: ' + Date()))
 
 app.get('/init', (req, res) => {
     try {
-        const prisma = new PrismaClient()
 
         prisma.api.create({
             data: {
