@@ -18,6 +18,9 @@ jobs:
           export_default_credentials: true
       - name: Use gcloud CLI
         run: gcloud info
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
       - name: Install Prisma
         run: npm install @prisma/cli -g
       - name: Generate Prisma Client
