@@ -58,7 +58,7 @@ app.post('/api', (req, res) => {
     }
 })
 
-app.get('api/:apiid', async (req, res) => {
+app.get('/api/:apiid', async (req, res) => {
     const api = await prisma.api.findFirst({
         where: {
             id: req.params.apiid as unknown as number
@@ -67,7 +67,7 @@ app.get('api/:apiid', async (req, res) => {
     res.send(api)
 })
 
-app.get('apis', async (req, res) => {
+app.get('/apis', async (req, res) => {
     const api = await prisma.api.findMany()
 
     res.send(api)
